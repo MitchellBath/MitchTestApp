@@ -2,13 +2,8 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-app.set('view_engine', 'ejs')
-
-// root URL
-app.get('/', (req, res) => {
-  res.render('index.ejs', {text : 'World'})
-  console.log('index sent')
-});
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
 
 // user router
 const userRouter = require('./routes/users')
