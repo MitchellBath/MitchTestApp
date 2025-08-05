@@ -12,7 +12,19 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    res.send('Create a user')
+    const isValid = false
+    if (isValid) {
+        users.push({
+            firstName: req.body.firstName, 
+            lastName: req.body.lastName
+        })
+        res.redirect(`users/${users.length-1}`)
+    }
+    else {
+        console.log('Error')
+        res.render(`users/new`, {firstName: req.body.firstName, lastName: req.body.lastName})
+    }
+    console.log(req.body.firstName)
 })
 
 router.route('/:id')

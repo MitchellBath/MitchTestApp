@@ -61,10 +61,10 @@
   <main>
     <form action="/users" method="POST">
       <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName" required>
+      <input type="text" id="firstName" name="firstName" value="<%=  locals.firstName %>" required>
 
       <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="lastName" required>
+      <input type="text" id="lastName" name="lastName" value="<%=  locals.lastName %>" required>
 
       <button type="submit">Submit</button>
     </form>
